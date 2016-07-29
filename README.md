@@ -24,7 +24,7 @@ ShouldBe eliminates tests that look like this:
 
 And makes them look like this:
 
-	OrderProvider.GetOrder().ShouldBe(new Order
+	OrderProvider.GetOrder().ShouldLookLike(new Order
 	{
 		Id = ShouldBe.GreaterThan(0).NameThis("OrderId"),
 		CustomerName = "The Great Coffee Sensationalist",
