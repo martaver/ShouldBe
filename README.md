@@ -1,12 +1,12 @@
 # ShouldBe
 Beautiful object graph assertions for C#.
 
-Being fine-grained and precise in our tests is important in order to maximize coverage and ensure that future changes don't break our specifications. But the cost of being precise is a load of syntactical overhead that affects readability.
+Granularity is important when testing in order to maximize coverage and provide precise feedback. But the cost of being precise is a often a lot of syntactical overhead that affects readability and productivity.
 
-ShouldBe greatly enhances testing assertions in two areas: **readability** and **productivity**.
+ShouldBe greatly enhances testing assertions' **readability** and **productivity**.
 
 ## Readability benefits
-ShouldBe eliminates tests that look like this:
+ShouldBe is a structured approach to constraint assertion and eliminates tests that look like this (e.g. in NUnit):
 
     var actual = OrderProvider.GetOrder();			
     Assert.That(actual.Id, Is.GreaterThan(0));
@@ -47,19 +47,19 @@ And makes them look like this:
 		}
 	});
 	
-This syntax, apart from being clearer and more readable, also enforces type safety where appropriate, helping with code completion.
+This syntax decreases the verbosity of the tests and clearly shows the structure of the object graph. It enforces type safety where appropriate, helping with code completion. It also clearly shows the constraints between related properties, such as Order.Id and Item.OrderId.
 
 ## Productivity benefits
-The second biggest benefit of using ShouldBe is the boost to productivity. Traditionally, tests failstop on the first failed assertion, but since we are focusing our test on a complete, immutable data structure we can now run all the constraint comparisons at once.
+Traditionally, tests stop execution on the first failed assertion, but since our test encapsulates a complete, immutable data structure we can run all the constraint comparisons at once and return failures in batch.
 	
-Instead of getting only the first constraint failure message like:
+Instead of getting only the first constraint failure message like (e.g. in NUnit):
 	
 	Expected string length 31 but was 3. Strings differ at index 0.
 	Expected: "The Great Coffee Sensationalist"
 	But was:  "Bob"
 	-----------^
 	
-And then having to fix, rebuild and re-run to reveal the next, we can get information on **all** failing constraints in one go:
+We can get information on **all** failing constraints in one go:
 
 	Begin Differences (6 differences):
 	Types [Int32,Int32], Item Left.Id != Right.Id, Values (2,1143848580)
@@ -70,7 +70,7 @@ And then having to fix, rebuild and re-run to reveal the next, we can get inform
 	Types [null,Int32], Item Left.Items[0].OrderId != Right.Items[0].OrderId, Values ((null),1143848580)
 	End Differences (Maximum of 100 differences shown).
 
-It's easy to underestimate how powerful this is - using ShouldBe we can save ourselves 5 cycles of fix/rebuild/rerun to fix the same set of errors.
+It's easy to underestimate how powerful this is - using ShouldBe we can save ourselves many cycles of fix/rebuild/rerun to fix the same set of errors.
 
 # How it works
 
@@ -80,9 +80,9 @@ When the assertion is being run, each property in the actual object is compared 
 
 # State of the project
 
-The project, although messy, is being used successfully with XUnit as the assertion platform in our production projects. There are many useful extension methods that could be added. It is even working fine XUnit running multi-threaded.
+The project is a functional prototype being used successfully with multi-threaded XUnit as the assertion platform in our production projects. There are many useful extension methods and constraints that could be added.
 
-The project is currently dependent on Kellerman's CompareNetObjects and Ploeh's AutoFixture - although these were mainly used for convenience - ideally, the project would be dependency free.
+The project is currently dependent on Kellerman's CompareNetObjects and Ploeh's AutoFixture - although these were mainly used for convenience - ideally, the project could and should be dependency free.
 
 # Acknowledgements
 
