@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 using Ilixir;
 using Ploeh.AutoFixture;
 
-namespace ShouldBe
+namespace ShouldBeAssertions
 {
 	public static class ShouldBe
 	{
@@ -140,6 +140,16 @@ namespace ShouldBe
 			var ph = Randoms.NextInt();
 			Constraints[ph] = new ConstraintResolver(ph);
 			return ph;
+		}
+
+		public static int GreaterThan(int min = Int32.MinValue)
+		{
+			return InRange(min);
+		}
+
+		public static int LessThan(int max = Int32.MaxValue)
+		{
+			return InRange(max: max);
 		}
 	}
 }

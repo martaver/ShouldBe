@@ -2,7 +2,7 @@
 using KellermanSoftware.CompareNetObjects;
 using KellermanSoftware.CompareNetObjects.TypeComparers;
 
-namespace ShouldBe
+namespace ShouldBeAssertions
 {
 	public class ConstraintComparer : BaseTypeComparer
 	{

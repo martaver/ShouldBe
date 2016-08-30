@@ -7,7 +7,7 @@ using Ilixir.Reflection;
 using KellermanSoftware.CompareNetObjects;
 using KellermanSoftware.CompareNetObjects.TypeComparers;
 
-namespace ShouldBe
+namespace ShouldBeAssertions
 {
 	public static class ShouldBeExtensions
 	{

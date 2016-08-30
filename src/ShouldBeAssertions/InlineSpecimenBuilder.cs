@@ -2,7 +2,7 @@
 using System.Reflection;
 using Ploeh.AutoFixture.Kernel;
 
-namespace ShouldBe
+namespace ShouldBeAssertions
 {
 	/// <summary>
 	/// Lets us set up a Type or Property customization for AutoFixture with a lambda.

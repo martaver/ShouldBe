@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.Serialization;
 
-namespace ShouldBe
+namespace ShouldBeAssertions
 {
 	[Serializable]
 	public class ShouldBeException : ApplicationException

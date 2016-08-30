@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShouldBe", "ShouldBe\ShouldBe.csproj", "{50B9A071-24C1-4293-ABCB-DC68694D2BA2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShouldBeAssertions", "ShouldBeAssertions\ShouldBeAssertions.csproj", "{50B9A071-24C1-4293-ABCB-DC68694D2BA2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

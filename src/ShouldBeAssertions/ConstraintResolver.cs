@@ -1,7 +1,7 @@
 using System;
 using KellermanSoftware.CompareNetObjects;
 
-namespace ShouldBe
+namespace ShouldBeAssertions
 {
 	public class ConstraintResolver
 	{

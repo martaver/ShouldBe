@@ -2,7 +2,7 @@
 using System.Reflection;
 using Ploeh.AutoFixture.Kernel;
 
-namespace ShouldBe
+namespace ShouldBeAssertions
 {
 	public abstract class SpecimenBuilder<T> : ISpecimenBuilder
 	{

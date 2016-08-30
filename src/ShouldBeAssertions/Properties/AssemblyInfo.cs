@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ShouldBe")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("ShouldBeAssertions")]
+[assembly: AssemblyDescription("Beautiful object graph assertions for C#")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ShouldBe")]
+[assembly: AssemblyCompany("Good Pilgrim Inc.")]
+[assembly: AssemblyProduct("ShouldBeAssertions")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
