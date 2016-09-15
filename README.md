@@ -88,4 +88,4 @@ The project is currently dependent on Kellerman's CompareNetObjects and Ploeh's 
 
 Inspired by Shouldly.
 Leverages the awesome comparison power of Kellerman's CompareNetObjects.
-Generates random & default values using Ploeh's AutoFixture.
+Generates random & default placeholder values using techniques from Ploeh's AutoFixture.
