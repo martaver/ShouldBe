@@ -5,11 +5,11 @@
     <version>$version$</version>
     <title>ShouldBe Assertions</title>
     <authors>Sebastian Nemeth</authors>
-    <owners>Ilixir Oy</owners>    
+    <owners>Good Pilgrim</owners>    
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Beautiful object graph assertions in C#.</description>
-    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <releaseNotes>More info at: https://github.com/Martaver/ShouldBe.</releaseNotes>
     <copyright>Copyright 2016</copyright>
-    <tags>Testing</tags>
+    <tags>Testing, Assertions</tags>
   </metadata>
 </package>
