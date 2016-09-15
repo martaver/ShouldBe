@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
-using Ilixir;
 using Ploeh.AutoFixture;
+using ShouldBeAssertions.Tools;
 
 namespace ShouldBeAssertions
 {
