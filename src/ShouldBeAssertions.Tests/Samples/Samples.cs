@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using NUnit.Framework;
 
-namespace ShouldBeAssertions.Samples
+namespace ShouldBeAssertions.Tests.Samples
 {
 	[TestFixture]
 	public class Samples
