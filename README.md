@@ -82,7 +82,7 @@ When the assertion is being run, each property in the actual object is compared 
 
 The project is a functional prototype being used successfully with multi-threaded XUnit as the assertion platform in our production projects. There are many useful extension methods and constraints that could be added.
 
-The project is currently dependent on Kellerman's CompareNetObjects and Ploeh's AutoFixture - although these were mainly used for convenience - ideally, the project could and should be dependency free.
+The project is currently dependent on Kellerman's CompareNetObjects, but ideally, the project could and should be dependency free.
 
 # Acknowledgements
 
