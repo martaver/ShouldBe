@@ -10,6 +10,8 @@ ShouldBe greatly enhances testing assertions' **readability** and **productivity
 ShouldBe is [available on NuGet](https://www.nuget.org/packages/ShouldBe/) as `ShouldBe`. Install it from NuGet Package Manager Console with:
 
     install-package ShouldBe
+    
+<img src="https://ci.appveyor.com/api/projects/status/32r7s2skrgm9ubva?svg=true" />
 
 ## Readability benefits
 ShouldBe is a structured approach to constraint assertion and eliminates tests that look like this (e.g. in NUnit):
