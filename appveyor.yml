@@ -18,19 +18,16 @@ nuget:
   
 before_build:
  - nuget restore src\ShouldBe.sln
+ - echo $version$
+ 
 build:
-  publish_nuget: true
-  
+  publish_nuget: true  
   verbosity: minimal  
+  
 test: off
+
 configuration:
  - Release
+ 
 cache:
  - packages
-#services:
-# - mssql2012sp1
-
-#--------------------------------#
-# Use Env Variables like this... #
-# $(Blah)                        #
-#--------------------------------#
