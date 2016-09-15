@@ -1,33 +1,78 @@
-os: Visual Studio 2015
-assembly_info:
-  patch: true
-  file: '**\AssemblyInfo.*'
-  assembly_version: '$(GitVersion_AssemblySemVer)'
-  assembly_file_version: '$(GitVersion_AssemblySemVer)'
-  assembly_informational_version: '$(GitVersion_NuGetVersion)'
-  
-install:
-  # GitVersion doesn't support SSH, so change the origin remote to an HTTPS URL.
-  # Ensure the GITVERSION_REMOTE_USERNAME and GITVERSION_REMOTE_PASSWORD env variables are set in either this file or the project configuration.  
-  - git remote set-url origin https://github.com/Martaver/ShouldBe.git
-  - GitVersion -output buildserver
-  
-nuget:
-  account_feed: true
-  project_feed: true
-  
-before_build:
- - nuget restore src\ShouldBe.sln
- - echo %GitVersion_NuGetVersion%
- 
-build:
-  publish_nuget: true  
-  verbosity: minimal  
-  
-test: off
+-
+  branches:
+    only:
+      - develop
+      - release
+      
+  os: Visual Studio 2015
+  assembly_info:
+    patch: true
+    file: '**\AssemblyInfo.*'
+    assembly_version: '$(GitVersion_AssemblySemVer)'
+    assembly_file_version: '$(GitVersion_AssemblySemVer)'
+    assembly_informational_version: '$(GitVersion_NuGetVersion)'
+    
+  install:
+    # GitVersion doesn't support SSH, so change the origin remote to an HTTPS URL.
+    # Ensure the GITVERSION_REMOTE_USERNAME and GITVERSION_REMOTE_PASSWORD env variables are set in either this file or the project configuration.  
+    - git remote set-url origin https://github.com/Martaver/ShouldBe.git
+    - GitVersion -output buildserver    
+    
+  before_build:
+   - nuget restore src\ShouldBe.sln
+   - echo %GitVersion_NuGetVersion%
+   
+  build:
+    publish_nuget: true  
+    verbosity: minimal  
+    
+  test: off
 
-configuration:
- - Release
- 
-cache:
- - packages
+  configuration:
+   - Debug
+   
+  cache:
+   - packages
+   
+ -
+  branches:
+    only:
+      - master
+      
+  os: Visual Studio 2015
+  assembly_info:
+    patch: true
+    file: '**\AssemblyInfo.*'
+    assembly_version: '$(GitVersion_AssemblySemVer)'
+    assembly_file_version: '$(GitVersion_AssemblySemVer)'
+    assembly_informational_version: '$(GitVersion_NuGetVersion)'
+    
+  install:
+    # GitVersion doesn't support SSH, so change the origin remote to an HTTPS URL.
+    # Ensure the GITVERSION_REMOTE_USERNAME and GITVERSION_REMOTE_PASSWORD env variables are set in either this file or the project configuration.  
+    - git remote set-url origin https://github.com/Martaver/ShouldBe.git
+    - GitVersion -output buildserver    
+    
+  before_build:
+   - nuget restore src\ShouldBe.sln
+   - echo %GitVersion_NuGetVersion%
+   
+  build:
+    publish_nuget: true  
+    verbosity: minimal  
+    
+  test: off
+
+  configuration:
+   - Release
+   
+  cache:
+   - packages
+   
+  deploy:
+    provider: NuGet  
+    api_key:
+      secure: abCcYDFde6umdqTwjJVRLAoGqtMAjoIacLGV6tCuE13rrRC9equTisBLaeQEpKhM
+    skip_symbols: true
+    artifact: /.*\.nupkg/ 
+   
