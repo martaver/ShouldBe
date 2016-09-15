@@ -5,6 +5,12 @@ Granularity is important when testing in order to maximize coverage and provide 
 
 ShouldBe greatly enhances testing assertions' **readability** and **productivity**.
 
+## Availability
+
+ShouldBe is [available on NuGet](https://www.nuget.org/packages/ShouldBe/) as `ShouldBe`. Install it from NuGet Package Manager Console with:
+
+    install-package ShouldBe
+
 ## Readability benefits
 ShouldBe is a structured approach to constraint assertion and eliminates tests that look like this (e.g. in NUnit):
 
