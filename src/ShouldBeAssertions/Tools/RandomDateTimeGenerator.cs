@@ -40,13 +40,22 @@ namespace ShouldBeAssertions.Tools
 		
 		public object Create(Type type)
 		{
-			switch (Type.GetTypeCode(type))
-			{				
-				case TypeCode.DateTime:
-					return new DateTime(GetRandomNumberOfTicks());
-				default:
-					return No.Value;
+			if (type == typeof(TimeSpan))
+			{
+				return new TimeSpan(GetRandomNumberOfTicks());
 			}
+
+			if (type == typeof(DateTimeOffset))
+			{
+				return new DateTimeOffset(new DateTime(GetRandomNumberOfTicks()));
+			}
+
+			if (type == typeof(DateTime))
+			{
+				return new DateTime(GetRandomNumberOfTicks());
+			}
+
+			return No.Value;
 		}
 
 		private long GetRandomNumberOfTicks()

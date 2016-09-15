@@ -1,4 +1,5 @@
-﻿using System.Runtime.Serialization;
+﻿using System;
+using System.Runtime.Serialization;
 
 namespace ShouldBeAssertions.Tools
 {
@@ -13,12 +14,19 @@ namespace ShouldBeAssertions.Tools
 			return typeof(T).IsValueType || typeof(T) == typeof(string);
 		}
 
+		public static bool IsNullableValueType(Type type)
+		{
+			return type.IsGenericType && type.GetGenericTypeDefinition() == typeof(Nullable<>);
+		}
+
 		public static T Create<T>()
 		{
 			var type = typeof(T);
 
+			if (IsNullableValueType(type)) type = Nullable.GetUnderlyingType(type);
+
 			if (IsGeneratableValueType<T>())
-			{
+			{				
 				var value = Number.Create(type);
 				if (value != No.Value) return (T)value;
 
