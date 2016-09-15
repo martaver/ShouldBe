@@ -82,9 +82,9 @@ It's easy to underestimate how powerful this is - using ShouldBe we can save our
 
 # How it works
 
-ShouldBe static methods return random 'placeholder' values in the same type that they're being assigned.
-Each random value is linked to a corresponding constraint condition that is created at the same time as the random value.
-When the assertion is being run, each property in the actual object is compared structurally to the expected property's constraint by looking up the constraint by it's (random placeholder) value. If no constraint is found, the comparison is made as usual.
+Users build example object graphs using literal values or the static `ShouldBe` class' constraint methods, which return placeholder values of the corresponding type. Placeholder values are random values or object references that are stored in a lookup table corresponding to the constraint the user wishes to apply to that property.
+
+When a comparison is run and a placeholder value is encountered, the corresponding constraint is applied and tested instead of a comparison on the literal value.
 
 # State of the project
 
