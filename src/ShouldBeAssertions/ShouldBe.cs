@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
-using Ploeh.AutoFixture;
 using ShouldBeAssertions.Tools;
 
 namespace ShouldBeAssertions
@@ -21,27 +19,12 @@ namespace ShouldBeAssertions
 		internal static Dictionary<object, ConstraintResolver> Constraints => _constraints ?? (_constraints = new Dictionary<object, ConstraintResolver>());
 		internal static List<Action> LazyConstraints => _lazyConstraints ?? (_lazyConstraints = new List<Action>());
 		internal static Dictionary<string, object> NamedValues => _namedValues ?? (_namedValues = new Dictionary<string, object>());
-
-		static readonly Fixture F = new Fixture();
-
-		static ShouldBe()
-		{
-			F.Customizations.Add(new InlineSpecimenBuilder<int>((p, cx) => Randoms.NextInt(max: 0)));
-		}
-
-		private static T GetPlaceholder<T>()
-		{
-			if (typeof(T).IsValueType || typeof(T) == typeof(string))
-			{
-				return F.Create<T>();
-			}
-			return (T)FormatterServices.GetUninitializedObject(typeof(T));
-		}
+		
 
 
 		public static T Any<T>(string name = null)
 		{
-			var ph = GetPlaceholder<T>();
+			var ph = Placeholder.Create<T>();
 
 			Constraints[ph] = new ConstraintResolver(ph)
 			{
@@ -69,7 +52,7 @@ namespace ShouldBeAssertions
 
 		public static T NonDefault<T>()
 		{
-			var ph = GetPlaceholder<T>();
+			var ph = Placeholder.Create<T>();
 
 			Constraints[ph] = new ConstraintResolver(ph)
 			{
@@ -87,7 +70,7 @@ namespace ShouldBeAssertions
 
 		public static T SameAs<T>(string name)
 		{
-			var ph = GetPlaceholder<T>();
+			var ph = Placeholder.Create<T>();
 
 			Constraints[ph] = new ConstraintResolver(ph)
 			{
@@ -123,21 +106,21 @@ namespace ShouldBeAssertions
 
 		public static T AllowedWhen<T>(Func<T, T, bool> predicate)
 		{
-			var ph = GetPlaceholder<T>();
+			var ph = Placeholder.Create<T>();
 			Constraints[ph] = new ConstraintResolver(ph);
 			return ph;
 		}
 
 		public static T OneOf<T>(params T[] values)
 		{
-			var ph = GetPlaceholder<T>();
+			var ph = Placeholder.Create<T>();
 			Constraints[ph] = new ConstraintResolver(ph);
 			return ph;
 		}
 
 		public static int InRange(int min = Int32.MinValue, int max = Int32.MaxValue)
 		{
-			var ph = Randoms.NextInt();
+			var ph = Placeholder.Create<int>();
 			Constraints[ph] = new ConstraintResolver(ph);
 			return ph;
 		}
