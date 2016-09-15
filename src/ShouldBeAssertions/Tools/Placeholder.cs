@@ -21,9 +21,11 @@ namespace ShouldBeAssertions.Tools
 
 		public static T Create<T>()
 		{
-			var type = typeof(T);
+			var type = typeof(T);			
 
 			if (IsNullableValueType(type)) type = Nullable.GetUnderlyingType(type);
+
+			if (type == typeof(bool)) throw new NotSupportedException($"Constraints for type 'bool' are not supported, since generating a unique, random placeholder value for it is impossible. We're working on it.");
 
 			if (IsGeneratableValueType<T>())
 			{				
