@@ -67,7 +67,7 @@ namespace ShouldBeAssertions.Tests.Samples
 		[Test]
 		public void UsingShouldBeAssertions()
 		{
-			OrderProvider.GetOrder().ShouldLookLike(new Order
+			this.OrderProvider.GetOrder().ShouldLookLike(new Order
 			{
 				Id = ShouldBe.GreaterThan(0).NameThis("OrderId"),
 				CustomerName = "The Great Coffee Sensationalist",

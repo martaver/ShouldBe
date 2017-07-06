@@ -63,7 +63,7 @@ namespace ShouldBeAssertions
 					MaxDifferences = 100,
 					MembersToIgnore = except?.ToList(),
 					CompareProperties = true,
-					IgnoreObjectTypes = true,
+					IgnoreObjectTypes = true,										
 					CustomComparers = new List<BaseTypeComparer>
 					{
 						new ConstraintComparer(ignoreDefaults, RootComparerFactory.GetRootComparer())
