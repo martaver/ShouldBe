@@ -26,6 +26,10 @@
     publish_nuget: true  
     verbosity: minimal  
     
+  after_build:
+   - cd src/ShouldBeAssertions.Core
+   - dotnet pack -c RELEASE ${GitVersion_NuGetVersion}
+    
   test: off
 
   configuration:

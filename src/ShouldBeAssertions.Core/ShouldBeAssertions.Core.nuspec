@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>ShouldBe.Core</id>
-    <version>$version$</version>
+    <version>0.3.3</version>
     <title>ShouldBe Assertions for .Net Core</title>
     <authors>Sebastian Nemeth</authors>
     <owners>Monk/mage</owners>    
