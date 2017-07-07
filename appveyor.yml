@@ -39,7 +39,7 @@
    - packages
    
   artifacts:
-    - path: **\*.nupkg
+    - path: \**\*.nupkg
    
   deploy:
     provider: NuGet  
