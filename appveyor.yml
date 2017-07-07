@@ -28,7 +28,7 @@
     
   after_build:
    - cd src/ShouldBeAssertions.Core
-   - dotnet pack -c RELEASE ${GitVersion_NuGetVersion} -o artifacts
+   - dotnet pack -c RELEASE /p:PackageVersion=%GitVersion_NuGetVersion% -o artifacts
     
   test: off
 
