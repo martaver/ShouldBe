@@ -28,7 +28,7 @@
     
   after_build:
    - cd src/ShouldBeAssertions.Core
-   - dotnet pack -c RELEASE /p:PackageVersion=%GitVersion_NuGetVersion%
+   - dotnet pack -c RELEASE /p:PackageVersion=%GitVersion_NuGetVersion% -o artifacts
     
   test: off
 
@@ -39,7 +39,7 @@
    - packages
    
   artifacts:
-    - path: \**\*.nupkg
+    - path: \**\artifacts\*.nupkg
    
   deploy:
     provider: NuGet  
