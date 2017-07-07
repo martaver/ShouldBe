@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShouldBeAssertions", "Shoul
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShouldBeAssertions.Tests", "ShouldBeAssertions.Tests\ShouldBeAssertions.Tests.csproj", "{B153B21B-745B-4CD8-8C57-BAE203122F70}"
 EndProject
+Project("{60ADFFFF-F272-4F7F-83CA-D94FE1767B59}") = "ShouldBeAssertions.Core", "ShouldBeAssertions.Core\ShouldBeAssertions.Core.csproj", "{6AC6C211-1EAD-4F6A-B00D-8E8FD61546B9}"
+EndProject
+Project("{61FAF774-EE87-430A-BF72-3F8016D50D4D}") = "ShouldBeAssertions.Core.Tests", "ShouldBeAssertions.Core.Tests\ShouldBeAssertions.Core.Tests.csproj", "{D0E83640-163B-4145-B0C3-1EEC27E88301}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{B153B21B-745B-4CD8-8C57-BAE203122F70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B153B21B-745B-4CD8-8C57-BAE203122F70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B153B21B-745B-4CD8-8C57-BAE203122F70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AC6C211-1EAD-4F6A-B00D-8E8FD61546B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AC6C211-1EAD-4F6A-B00D-8E8FD61546B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AC6C211-1EAD-4F6A-B00D-8E8FD61546B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AC6C211-1EAD-4F6A-B00D-8E8FD61546B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0E83640-163B-4145-B0C3-1EEC27E88301}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0E83640-163B-4145-B0C3-1EEC27E88301}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0E83640-163B-4145-B0C3-1EEC27E88301}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0E83640-163B-4145-B0C3-1EEC27E88301}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

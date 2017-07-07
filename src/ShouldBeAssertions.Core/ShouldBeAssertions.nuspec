@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>ShouldBe.Core</id>
+    <version>$version$</version>
+    <title>ShouldBe Assertions for .Net Core</title>
+    <authors>Sebastian Nemeth</authors>
+    <owners>Monk/mage</owners>    
+    <projectUrl>https://github.com/Martaver/ShouldBe</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Beautiful object graph assertions in C#.</description>    
+    <copyright>Copyright 2016</copyright>
+    <tags>Testing, Assertions</tags>
+  </metadata>
+</package>
